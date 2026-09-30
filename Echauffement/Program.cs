@@ -27,7 +27,8 @@ class Program
            Console.WriteLine("you are not a minor");
         // Etape 4 : demandez maintenant à l'utilisateur combien d'euro il a (nombre décimal)
         Console.WriteLine("how much money do you have?");
-        Console.ReadLine();
+        float argents = float.Parse(Console.ReadLine());
+        Console.WriteLine($"you have {argents} euros");
         // Etape 5 : affichez maintenant 4 choix d'armes avec chacune un prix
 
         // Etape 6 : laissez l'utilisateur choisir l'une de ces 4 armes en indiquant un nombre entre 1 et 4
