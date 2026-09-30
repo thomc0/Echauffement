@@ -30,44 +30,48 @@ class Program
         float argents = float.Parse(Console.ReadLine());
         Console.WriteLine($"you have {argents} euros");
         // Etape 5 : affichez maintenant 4 choix d'armes avec chacune un prix
-        Console.WriteLine("choose your weapon( write the number of the weapon you want)");
-        float priceOfGun = 50;
-
-        Console.WriteLine($"1gun = {priceOfGun}");
-        float priceOfSword = 25;
-        Console.WriteLine($"2sword = {priceOfSword}");
-        float priceOfKnife = 10;
-        string sword;
-        Console.WriteLine($"3.knife = {priceOfKnife}");
-        float priceOfBow = 15;
-        string bow;
-        Console.WriteLine($"4.bow = {priceOfBow}");
-        string response = Console.ReadLine();
-        if (response == "1" && argents < priceOfGun)
+        if (age > 18)
         {
+            Console.WriteLine("choose your weapon( write the number of the weapon you want)");
+            float priceOfGun = 50;
+            Console.WriteLine($"1gun = {priceOfGun}");
+            float priceOfSword = 25;
+            Console.WriteLine($"2sword = {priceOfSword}");
+            float priceOfKnife = 10;
+            string sword;
+            Console.WriteLine($"3.knife = {priceOfKnife}");
+            float priceOfBow = 15;
+            string bow;
+            Console.WriteLine($"4.bow = {priceOfBow}");
+            string response = Console.ReadLine();
+            if (response == "1" && argents > 0 && age > 18)
+            {
 
-            Console.WriteLine("you don't have enought money");
-
+                Console.WriteLine("you bought a gun");
+                Console.WriteLine($"you have {argents - priceOfGun}");
+            }
+            else if (response == "2")
+            {
+                Console.WriteLine("you bought a sword");
+                Console.WriteLine($"you have {argents - priceOfSword}");
+            }
+            else if (response == "3")
+            {
+                Console.WriteLine("you bought a gun");
+                Console.WriteLine($"you have {argents - priceOfKnife}");
+            }
+            else if (response == "4")
+            {
+                Console.WriteLine("you bought a gun");
+                Console.WriteLine($"you have {argents - priceOfBow}");
+            }
+            else
+            {
+                Console.WriteLine("you don't have enought money");
+            }
+        }
         else
-            Console.WriteLine("you bought a gun");
-            Console.WriteLine($"you have {argents - priceOfGun}");
-        }
-        if (response == "2")
-        { 
-            Console.WriteLine("you bought a sword");
-            Console.WriteLine($"you have {argents - priceOfSword}");
-        }
-        if (response == "3")
-        {
-            Console.WriteLine("you bought a gun");
-            Console.WriteLine($"you have {argents - priceOfKnife}");
-        }
-        if (response == "4")
-        {
-            Console.WriteLine("you bought a gun");
-            Console.WriteLine($"you have {argents - priceOfBow}");
-        }
-
+            Console.WriteLine("you are a minor, you can't buy a weapon");
         // Etape 6 : laissez l'utilisateur choisir l'une de ces 4 armes en indiquant un nombre entre 1 et 4
 
         // Etape 7a : vérifiez si l'utilisateur a assez d'argent par rapport à la somme qu'il avait rentré à l'étape 4
