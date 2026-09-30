@@ -1,4 +1,5 @@
-﻿using System.Diagnostics.CodeAnalysis;
+﻿using System.ComponentModel.Design;
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.InteropServices;
 
 namespace Echauffement;
@@ -17,9 +18,13 @@ class Program
         Console.WriteLine("what's your name");
         string name = Console.ReadLine();
         Console.WriteLine("what is your age?");
-        string age = Console.ReadLine();
+        int age = int.Parse(Console.ReadLine());
         // Etape 3 : affichez soit "Tu es majeur", soit "Tu es mineur" dépendant de l'âge fourni par l'utilisateu
-        Console.WriteLine($"hello {name}, you are {age} years old");
+ 
+        if(age < 18)
+           Console.WriteLine("you are a minor");
+        else
+           Console.WriteLine("you are not a minor");
         // Etape 4 : demandez maintenant à l'utilisateur combien d'euro il a (nombre décimal)
         Console.WriteLine("how much money do you have?");
         Console.ReadLine();
